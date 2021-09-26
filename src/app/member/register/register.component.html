@@ -1,0 +1,75 @@
+<div class="cont">
+  <div class="form">
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <h1>{{'register' |translate}}</h1>
+      <input
+        type="text"
+        class="user"
+        formControlName="username"
+        placeholder="{{'name' |translate}}"
+      />
+      <div
+        class="invalid-feedback d-block"
+        *ngIf="
+          form.get('username').hasError('required') &&
+          form.get('username').dirty
+        "
+      >
+        required
+      </div>
+      <div
+        *ngIf="form.get('username').hasError('minlength')"
+        class="invalid-feedback d-block"
+      >
+        must be at least 2 letters
+      </div>
+
+      <input
+        type="text"
+        class="user"
+        formControlName="email"
+        placeholder="e-mail"
+      />
+      <div
+        class="invalid-feedback d-block"
+        *ngIf="
+          form.get('email').hasError('required') && form.get('email').dirty
+        "
+      >
+        required
+      </div>
+      <div
+        class="invalid-feedback d-block"
+        *ngIf="form.get('email').hasError('pattern')"
+      >
+        invalid e-mail
+      </div>
+
+      <input
+        type="password"
+        class="user"
+        formControlName="password"
+        placeholder="{{'password' |translate}}"
+      />
+      <div
+        *ngIf="
+          form.get('password').hasError('required') &&
+          form.get('password').dirty
+        "
+        class="invalid-feedback d-block"
+      >
+        required
+      </div>
+      <div
+        class="invalid-feedback d-block"
+        *ngIf="form.get('password').hasError('passwordStrength')"
+      >
+        {{ form.get("password").errors["passwordStrength"] }}
+      </div>
+
+      <button [disabled]="!this.form.valid" class="login">{{'register' |translate}}</button>
+    </form>
+  </div>
+
+  <h2></h2>
+</div>

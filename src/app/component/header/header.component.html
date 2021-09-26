@@ -1,0 +1,44 @@
+<!-- <div class="header">
+ 
+  </div>
+  <div class="topnav">
+
+    <a href="#">Home Page</a>
+    <a href="#">About Us</a>
+    <a [routerLink]="['/contact']">Contact</a>
+    <ng-container  *ngIf="vm$ | async as vm">
+      <a *ngIf="vm.isLoggedin " href="#" style="float:right" (click)="logout()" > Logout</a>
+    </ng-container>
+    <ng-container  *ngIf="vm$ | async as vm">
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['/login']" style="float:right" > Login</a>
+    </ng-container>
+    <ng-container  *ngIf="vm$ | async as vm">
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['/register']" style="float:right" > Register</a>
+    </ng-container>
+    
+
+  </div> -->
+
+  <div class="topnav responsive" id="myTopnav">
+    
+    <a [routerLink]="['/']" class="active">My Blog</a>
+    <a [routerLink]="['/']">{{'home' |translate}}</a>
+    <a [routerLink]="['/contact']">{{'contact' |translate}}</a>
+
+    <a [routerLink]="['/']">{{'about' |translate}}</a>
+    <ng-container  *ngIf="vm$ | async as vm">
+      <a *ngIf="vm.isLoggedin " href="#" style="float:right" (click)="logout()" > {{'logout' |translate}}</a>
+    </ng-container>
+    <ng-container  *ngIf="vm$ | async as vm">
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['/login']" style="float:right" > {{'login' |translate}}</a>
+    </ng-container>
+    <ng-container  *ngIf="vm$ | async as vm">
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['/register']" style="float:right" > {{'register' |translate}}</a>
+    </ng-container>
+   
+    
+  </div>
+  
+  
+
+ 

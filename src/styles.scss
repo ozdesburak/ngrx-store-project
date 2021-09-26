@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+* {
+	box-sizing: border-box;
+	font-family: 'Urbanist', sans-serif;
+}
+body {
+	font-family: Arial;
+	padding: 10px;
+	background: #f1f1f1;
+}
+.header {
+	// padding: 30px;
+	text-align: center;
+	background: white;
+	h1 {
+		font-size: 50px;
+	}
+}
+.topnav {
+	overflow: hidden;
+	background-color: #1E3163;
+	border-radius: 5px;
+	a {
+		float: left;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		&:hover {
+			background-color: #2D46B9;
+			color: whitesmoke;
+		}
+	}
+}
+.leftcolumn {
+	float: left;
+	width: 75%;
+}
+.rightcolumn {
+	float: left;
+	width: 25%;
+	background-color: #f1f1f1;
+	padding-left: 20px;
+}
+.fakeimg {
+	background-color: #F0D9FF;
+	width: 100%;
+	padding: 20px;
+	border-radius: 5px;
+}
+.card {
+	background-color: white;
+	padding: 20px;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+.row {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.footer {
+	padding: 20px;
+	text-align: center;
+	background: #ddd;
+	margin-top: 20px;
+}
+@media screen and (max-width: 800px) {
+	.leftcolumn {
+		width: 100%;
+		padding: 0;
+	}
+	.rightcolumn {
+		width: 100%;
+		padding: 0;
+	}
+}
+@media screen and (max-width: 400px) {
+	.topnav {
+		a {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+.blue-snackbar {
+	background: #2196F3;
+  }
+.green-snackbar {
+	background: green;
+  }
+.red-snackbar {
+	background: indianred;
+  }

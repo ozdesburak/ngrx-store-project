@@ -1,0 +1,31 @@
+<!-- <div class="footer">
+    <h2>Footer</h2>
+  </div> -->
+
+    <footer>
+      <div class="mail">
+        <h3>{{'ChangeYourLanguage' |translate}}</h3>
+        <p>{{'footerText' | translate}}</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Language</mat-label>
+          <mat-select (selectionChange)="changeLang($event.value)" [(value)]="selectedLang">
+            <mat-option *ngFor="let item of langue" [value]="item.value" >
+              {{item.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="sub-nav">
+        <ul>
+          <li><a href="#">{{'footer.rightContent.about' |translate}}</a></li>
+          <li><a href="#">{{'footer.rightContent.terms' |translate}}</a></li>
+          <li><a href="#">{{'footer.rightContent.faq' |translate}}</a></li>
+          <li><a href="#">{{'footer.rightContent.carreer' |translate}}</a></li>
+          <li><a href="#">{{'footer.rightContent.Jobs' |translate}}</a></li>
+          <li><a href="#">{{'footer.rightContent.accessibility' |translate}}</a></li>
+          <li><a href="#">{{'footer.rightContent.contact' |translate}}</a></li>
+        </ul>
+      </div>
+
+  
+    </footer>

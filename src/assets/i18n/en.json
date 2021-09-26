@@ -1,0 +1,31 @@
+{
+    "footer":{
+        "rightContent":{
+            "about":"About",
+            "terms":"Terms & Conditions",
+            "faq":"FAQs",
+            "carreer":"Carreers",
+            "Jobs":"Jobs",
+            "accessibility":"Accessibility",
+            "contact":"Contact"
+            
+        }
+    },
+    "home":"Home",
+    "contact":"Contact",
+    "about":"About Us",
+    "myBlog":"My Blog",
+    "login":" Login",
+    "register":"Register",
+    "logout": "Logout",
+    "ChangeYourLanguage":"Change Your Language",
+    "name":"Name",
+    "password":"Password",
+    "username":"User Name",
+    "country":"Country",
+    "subject":"Subject",
+    "submit":"Submit",
+    "footerText":"Receive regular information from us",
+    "contactForm":"Contact Form"
+
+}

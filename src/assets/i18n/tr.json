@@ -1,0 +1,34 @@
+{
+    "footer":{
+        "rightContent":{
+            "about":"Hakkımızda",
+            "terms":"Şartlar",
+            "faq":"SSS",
+            "carreer":"Kariyer",
+            "Jobs":"İş",
+            "accessibility":"Ulaşım",
+            "contact":"İletişim"
+            
+        }
+    },
+    "home": "Anasayfa",
+    "contact":"İletişim",
+    "about":"hakkımızda",
+    "myBlog":" Blog Sayfam",
+    "login":" Giriş",
+    "register":"Kayıt ol",
+    "logout": "Çıkış",
+    "ChangeYourLanguage":"Dili Değiştir",
+    "name":"Adı",
+    "password":"Şifre",
+    "username":"Kullanıcı Adı",
+    "country":"Ülke",
+    "subject":"Konu",
+    "submit":"Gönder",
+    "footerText":"Bizden Bilgi Alın..",
+    "contactForm":"İletişim Formu"
+   
+
+
+
+}
