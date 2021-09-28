@@ -27,6 +27,9 @@ export class ContactComponent implements OnInit {
     { id: "BR", name: "Brazil" },
     { id: "ZW", name: "Zimbabwe" }
   ]
+  emailPattern = "[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,63}";
+
+  formSubmitted: boolean = false;
 
   constructor(private store: Store<AppState>, private readonly fb: FormBuilder,) { 
     this.getLoginUser()
@@ -54,7 +57,7 @@ export class ContactComponent implements OnInit {
     
     this.form = this.fb.group({
       username: [this.user?.name ?? '', Validators.required],
-      mail: [this.user?.email ?? '', Validators.required],
+      mail: [this.user?.email ?? '', [Validators.required, , Validators.pattern(this.emailPattern)]],
       country: ['', Validators.required],
       subject: ['', Validators.required],
       
@@ -62,8 +65,18 @@ export class ContactComponent implements OnInit {
   }
   
   onSubmit() {
+    this.formSubmitted = true;
     console.log(this.form.value);
-    this.store.dispatch(fromContactActions.contactCreatePage(this.form.value));
+    
+     if(this.form.valid)this.store.dispatch(fromContactActions.contactCreatePage(this.form.value));
+  }
+
+  validationErrorExists() {
+    return ((this.formSubmitted || this.form.dirty) && !this.form.valid);
+  }
+  
+  public hasError = (controlName: string, errorName: string) => {
+    return this.form.controls[controlName].hasError(errorName);
   }
 
 }
