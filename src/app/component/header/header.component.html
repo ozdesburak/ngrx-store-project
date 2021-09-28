@@ -30,10 +30,10 @@
       <a *ngIf="vm.isLoggedin " href="#" style="float:right" (click)="logout()" > {{'logout' |translate}}</a>
     </ng-container>
     <ng-container  *ngIf="vm$ | async as vm">
-      <a *ngIf="!vm.isLoggedin "[routerLink]="['/login']" style="float:right" > {{'login' |translate}}</a>
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['../login']" style="float:right" > {{'login' |translate}}</a>
     </ng-container>
     <ng-container  *ngIf="vm$ | async as vm">
-      <a *ngIf="!vm.isLoggedin "[routerLink]="['/register']" style="float:right" > {{'register' |translate}}</a>
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['../register']" style="float:right" > {{'register' |translate}}</a>
     </ng-container>
    
     

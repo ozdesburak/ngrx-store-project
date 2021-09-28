@@ -50,7 +50,6 @@ export class ContactComponent implements OnInit {
   }
 
   private contactForm(){
-    console.log(this.user?.email);
     
     this.form = this.fb.group({
       username: [this.user?.name ?? '', Validators.required],

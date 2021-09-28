@@ -12,11 +12,7 @@ import { logout } from 'src/app/store/actions/auth.actions';
 })
 export class HeaderComponent implements OnInit {
   public vm$: Observable<fromAuthSelectors.AuthLinksViewModal>;
-  foods = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  
 
   constructor(private store: Store<AppState>) { }
 

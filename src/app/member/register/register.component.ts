@@ -27,22 +27,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm();
   }
-  ngOnDestroy() {
-    this.subscription.unsubscribe()
-  }
+  
 
   register(){
     this.formSubmitted = true;
 
-    if(this.form.valid){
+   
         const observer={next: (user: User) => (
         this.route.navigate(['/login'])
         ),
           error: (err: any) => console.log(err)
         }   
    
-        this.subscription =this.authService.register(this.form.value).subscribe(observer)
-    } 
+        if(this.form.valid) this.subscription =this.authService.register(this.form.value).subscribe(observer)
+
   }
 
 

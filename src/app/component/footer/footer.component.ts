@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   selectedLang:any
   langue: any[] = [
     {value: 'tr', viewValue: 'Türkçe'},
-    {value: 'eng', viewValue: 'English'},
+    {value: 'en', viewValue: 'English'},
   ];
   constructor(private store: Store<AppState>) { }
 
