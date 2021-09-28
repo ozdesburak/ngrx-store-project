@@ -6,6 +6,7 @@ import { AppState } from '../store';
 import * as fromAuthSelectors from 'src/app/store/selectors/auth.selectors';
 import { User } from '../models/auth';
 import * as fromContactActions from 'src/app/store/actions/contact.actions'
+import { CountryList } from '../models/countryList';
 
 @Component({
   selector: 'app-contact',
@@ -16,7 +17,7 @@ export class ContactComponent implements OnInit {
   form: FormGroup;
   private userStore$: Subscription;
   user:User
-   countryList = [
+   countryList = <CountryList[]> [
     { id: "TR", name: "Turkey" },
     { id: "US", name: "United States of America" },
     { id: "GB", name: "United Kingdom" },
