@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { PasswordStrengthValidator } from '../password-strength.validators';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -21,6 +22,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private authService:AuthService,
     private route:Router,
+    private snackBar: MatSnackBar, 
     private readonly fb: FormBuilder,
   ) { }
 

@@ -22,18 +22,18 @@
   <div class="topnav responsive" id="myTopnav">
     
     <a [routerLink]="['/']" class="active">My Blog</a>
-    <a [routerLink]="['/']">{{'home' |translate}}</a>
-    <a [routerLink]="['/contact']">{{'contact' |translate}}</a>
+    <a [routerLink]="['/home']" [routerLinkActive]="['activeButton']" >{{'home' |translate}}</a>
+    <a [routerLink]="['/contact']" [routerLinkActive]="['activeButton']">{{'contact' |translate}}</a>
 
-    <a [routerLink]="['/']">{{'about' |translate}}</a>
+    <!-- <a [routerLink]="['/']" >{{'about' |translate}}</a> -->
     <ng-container  *ngIf="vm$ | async as vm">
       <a *ngIf="vm.isLoggedin " href="#" style="float:right" (click)="logout()" > {{'logout' |translate}}</a>
     </ng-container>
     <ng-container  *ngIf="vm$ | async as vm">
-      <a *ngIf="!vm.isLoggedin "[routerLink]="['../login']" style="float:right" > {{'login' |translate}}</a>
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['../login']" [routerLinkActive]="['activeButton']" style="float:right" > {{'login' |translate}}</a>
     </ng-container>
     <ng-container  *ngIf="vm$ | async as vm">
-      <a *ngIf="!vm.isLoggedin "[routerLink]="['../register']" style="float:right" > {{'register' |translate}}</a>
+      <a *ngIf="!vm.isLoggedin "[routerLink]="['../register']" [routerLinkActive]="['activeButton']" style="float:right" > {{'register' |translate}}</a>
     </ng-container>
    
     
