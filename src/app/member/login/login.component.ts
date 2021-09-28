@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  formSubmitted = false;
   form: FormGroup;
   constructor(
     private readonly fb: FormBuilder,
@@ -16,11 +17,7 @@ export class LoginComponent implements OnInit {
       this.loginForm();
      }
 
-  ngOnInit(): void {
-
-   
-
-  }
+  ngOnInit(): void {}
 
 
   private loginForm(){
@@ -31,9 +28,19 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.store.dispatch(fromAuthActions.loginPage(this.form.value));
+    this.formSubmitted = true;
+    //
+      if(this.form.valid){
+        this.store.dispatch(fromAuthActions.loginPage(this.form.value));
+      }
   }
 
+  validationErrorExists() {
+    return ((this.formSubmitted || this.form.dirty) && !this.form.valid);
+  }
   
+  public hasError = (controlName: string, errorName: string) => {
+    return this.form.controls[controlName].hasError(errorName);
+  }
 
 }

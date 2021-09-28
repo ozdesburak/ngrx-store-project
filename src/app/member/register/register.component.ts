@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   Observer: { next: (user: User) => Promise<boolean>; error: (err: any) => void; };
   subscription: Subscription;
+  formSubmitted = false;
 
   constructor(
     private authService:AuthService,
@@ -31,13 +32,17 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-   const observer={next: (user: User) => (
-     this.route.navigate(['/login'])
+    this.formSubmitted = true;
 
-    ),
-      error: (err: any) => console.log(err)
-    }   
-    this.subscription =this.authService.register(this.form.value).subscribe(observer)
+    if(this.form.valid){
+        const observer={next: (user: User) => (
+        this.route.navigate(['/login'])
+        ),
+          error: (err: any) => console.log(err)
+        }   
+   
+        this.subscription =this.authService.register(this.form.value).subscribe(observer)
+    } 
   }
 
 
@@ -49,6 +54,14 @@ export class RegisterComponent implements OnInit {
       password: ["", [Validators.required, PasswordStrengthValidator]],
 
     });
+  }
+
+  validationErrorExists() {
+    return ((this.formSubmitted || this.form.dirty) && !this.form.valid);
+  }
+  
+  public hasError = (controlName: string, errorName: string) => {
+    return this.form.controls[controlName].hasError(errorName);
   }
 
 }

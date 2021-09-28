@@ -8,21 +8,12 @@
         formControlName="username"
         placeholder="{{'name' |translate}}"
       />
-      <div
-        class="invalid-feedback d-block"
-        *ngIf="
-          form.get('username').hasError('required') &&
-          form.get('username').dirty
-        "
-      >
-        required
-      </div>
-      <div
-        *ngIf="form.get('username').hasError('minlength')"
-        class="invalid-feedback d-block"
-      >
-        must be at least 2 letters
-      </div>
+        <div *ngIf="validationErrorExists();" class="invalid-feedback d-block" style="color:red;">
+          <div *ngIf="hasError('username', 'required')">name is required</div>
+          <div *ngIf="hasError('username', 'minlength')"> must be at least 2 letters</div>
+
+       </div>
+     
 
       <input
         type="text"
@@ -30,20 +21,14 @@
         formControlName="email"
         placeholder="e-mail"
       />
-      <div
-        class="invalid-feedback d-block"
-        *ngIf="
-          form.get('email').hasError('required') && form.get('email').dirty
-        "
-      >
-        required
-      </div>
-      <div
-        class="invalid-feedback d-block"
-        *ngIf="form.get('email').hasError('pattern')"
-      >
-        invalid e-mail
-      </div>
+      <div *ngIf="validationErrorExists();" class="invalid-feedback d-block" style="color:red;">
+        <div *ngIf="hasError('email', 'required')">mail is required</div>
+        <div *ngIf="hasError('email', 'maxLength')"> must be at 250 char</div>
+        <div *ngIf="hasError('email', 'pattern')"> must be email</div>
+
+     </div>
+   
+    
 
       <input
         type="password"
@@ -51,15 +36,10 @@
         formControlName="password"
         placeholder="{{'password' |translate}}"
       />
-      <div
-        *ngIf="
-          form.get('password').hasError('required') &&
-          form.get('password').dirty
-        "
-        class="invalid-feedback d-block"
-      >
-        required
-      </div>
+      <div *ngIf="validationErrorExists();" class="invalid-feedback d-block" style="color:red;">
+        <div *ngIf="hasError('password', 'required')">password is required</div>
+
+     </div>
       <div
         class="invalid-feedback d-block"
         *ngIf="form.get('password').hasError('passwordStrength')"
@@ -67,7 +47,7 @@
         {{ form.get("password").errors["passwordStrength"] }}
       </div>
 
-      <button [disabled]="!this.form.valid" class="login">{{'register' |translate}}</button>
+      <button  class="login">{{'register' |translate}}</button>
     </form>
   </div>
 

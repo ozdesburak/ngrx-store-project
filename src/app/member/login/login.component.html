@@ -11,30 +11,18 @@
              formControlName="username"
              class="user"
              placeholder="{{'username' |translate}}"/>
-             <div
-             *ngIf="
-               form.get('username').hasError('required') &&
-               form.get('username').dirty
-             "
-             class="invalid-feedback d-block"
-           >
-             required
+           <div *ngIf="validationErrorExists();" class="invalid-feedback d-block" style="color:red;">
+            <div *ngIf="hasError('username', 'required')">Username is required</div>
            </div>
       <input type="password" 
             name="password" 
             formControlName="password"
              class="pass"
              placeholder="{{'password' |translate}}"/>
-             <div
-             *ngIf="
-               form.get('password').hasError('required') &&
-               form.get('password').dirty
-             "
-             class="invalid-feedback d-block"
-           >
-             required
-           </div>
-      <button   [disabled]="!this.form.valid" class="login">{{'login' |translate}}</button>
+             <div *ngIf="validationErrorExists();" class="invalid-feedback d-block" style="color:red;">
+              <div *ngIf="hasError('password', 'required')">Password is required</div>
+             </div>
+      <button    class="login">{{'login' |translate}}</button>
     </form>
   </div>
   
