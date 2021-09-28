@@ -1,5 +1,10 @@
 
-<div class="container" style="margin:30px">
+
+
+
+<div class="card" style="margin-top: 20px;" >
+
+  <div class="container" >
     <h3>{{'contactForm' |translate}}</h3>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <label for="fname"> {{'name' |translate}}</label>
@@ -14,11 +19,9 @@
     </select>
 
     <label for="subject">{{'subject' |translate}}</label>
-    <textarea formControlName="subject" id="subject" name="subject" placeholder="..." style="height:200px"></textarea>
+    <textarea formControlName="subject" id="subject" name="subject" placeholder="..." style="height:70px"></textarea>
 
     <input type="submit" value="{{'submit' |translate}}">
   </form>
 </div>
-
-
-
+</div>
