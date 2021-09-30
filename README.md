@@ -17,7 +17,7 @@ git clone https://github.com/ngrx/example-app.git
 
 
 # change directory to repo
-cd example-app
+cd blog
 
 # Use npm or yarn to install the dependencies:
 npm install
