@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
+## Goal
+
+ - "Responsive" Design +
+ - Modern JS Frameworks - Angular +
+ - SCSS+
+ - This feature shows your ability to pass "state" or "updates"/"events" among the components of the web application. Navigating between pages should not reset the site-wide/global state.+
+ - Reloading the page can clear the state. Persistence is not required. +
+ - What to store: Language (See Localization) "User Info" (See Login Modal)  - (login page & register page)
+ - User should stay on the same page when localization changes. +
+ - Navigating to a new page or going back should not change the language set. (See State Management) +
+
 ### Included
  - [ngrx/store](https://github.com/ngrx/store) - RxJS powered state management for Angular apps, inspired by Redux
  - [ngrx/effects](https://github.com/ngrx/effects) - Side effect model for @ngrx/store
