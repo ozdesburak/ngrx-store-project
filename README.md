@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
+### Included
+ - [ngrx/store](https://github.com/ngrx/store) - RxJS powered state management for Angular apps, inspired by Redux
+ - [ngrx/effects](https://github.com/ngrx/effects) - Side effect model for @ngrx/store
+ - [angular/router](https://github.com/angular/angular) - Angular Router
+ - [ngrx/db](https://github.com/ngrx/db) - RxJS powered IndexedDB for Angular apps
+ - [ngrx/store-devtools](https://github.com/ngrx/store-devtools) - Instrumentation for @ngrx/store enabling time-travel debugging
+ - [codewareio/ngrx-store-freeze](https://github.com/codewareio/ngrx-store-freeze) - A @ngrx/store meta reducer that prevents state from being mutated
+ - [reselect](https://github.com/reactjs/reselect) - Selector library for Redux
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
