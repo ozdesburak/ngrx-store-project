@@ -45,9 +45,7 @@ Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser
 
 # TODO
 - [ ] login & register modal
-- [+] add readme
 - [ ] add tests
-- [+] add success notifications
 - [ ] add fontawesome library
 
 ## Code scaffolding
