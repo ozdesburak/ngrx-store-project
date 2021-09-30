@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  - "Responsive" Design +
  - Modern JS Frameworks - Angular +
  - SCSS+
+ - No backend code is needed. You don't need a mock server, but you can still use one if you would like to +  [node.js/backend](https://github.com/ozdesburak/rxjsExample-1--Backend)
  - This feature shows your ability to pass "state" or "updates"/"events" among the components of the web application. Navigating between pages should not reset the site-wide/global state.+
  - Reloading the page can clear the state. Persistence is not required. +
  - What to store: Language (See Localization) "User Info" (See Login Modal)  - (login page & register page)
