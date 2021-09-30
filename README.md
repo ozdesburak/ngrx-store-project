@@ -13,6 +13,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  - What to store: Language (See Localization) "User Info" (See Login Modal)  - (login page & register page)
  - User should stay on the same page when localization changes. +
  - Navigating to a new page or going back should not change the language set. (See State Management) +
+ - Login button (only shown if no "User Info") +
+ - Dummy footer +
 
 ### Included
  - [ngrx/store](https://github.com/ngrx/store) - RxJS powered state management for Angular apps, inspired by Redux
@@ -40,6 +42,13 @@ ng serve
 ```
 
 Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser
+
+# TODO
+- [ ] login & register modal
+- [+] add readme
+- [ ] add tests
+- [+] add success notifications
+- [ ] add fontawesome library
 
 ## Code scaffolding
 
