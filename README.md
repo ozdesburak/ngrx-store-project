@@ -2,9 +2,51 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
-## Development server
+## Goal
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ - "Responsive" Design +
+ - Modern JS Frameworks - Angular +
+ - SCSS+
+ - No backend code is needed. You don't need a mock server, but you can still use one if you would like to +  [node.js/backend](https://github.com/ozdesburak/rxjsExample-1--Backend)
+ - This feature shows your ability to pass "state" or "updates"/"events" among the components of the web application. Navigating between pages should not reset the site-wide/global state.+
+ - Reloading the page can clear the state. Persistence is not required. +
+ - What to store: Language (See Localization) "User Info" (See Login Modal)  - (login page & register page)
+ - User should stay on the same page when localization changes. +
+ - Navigating to a new page or going back should not change the language set. (See State Management) +
+ - Login button (only shown if no "User Info") +
+ - Dummy footer +
+
+### Included
+ - [ngrx/store](https://github.com/ngrx/store) - RxJS powered state management for Angular apps, inspired by Redux
+ - [ngrx/effects](https://github.com/ngrx/effects) - Side effect model for @ngrx/store
+ - [angular/router](https://github.com/angular/angular) - Angular Router
+ - [Angular Material](https://material.angular.io) - Material Design components for Angular
+ - [ngrx/store-devtools](https://github.com/ngrx/store-devtools) - Instrumentation for @ngrx/store enabling time-travel debugging
+
+### Quick start
+
+```bash
+# clone the repo
+git clone https://github.com/ngrx/example-app.git
+
+
+# change directory to repo
+cd blog
+
+# Use npm or yarn to install the dependencies:
+npm install
+
+
+# start the server
+ng serve
+```
+
+Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser
+
+# TODO
+- [ ] login & register modal
+- [ ] add tests
+- [ ] add fontawesome library
 
 ## Code scaffolding
 
