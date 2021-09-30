@@ -9,9 +9,25 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  - [Angular Material](https://material.angular.io) - Material Design components for Angular
  - [ngrx/store-devtools](https://github.com/ngrx/store-devtools) - Instrumentation for @ngrx/store enabling time-travel debugging
 
-## Development server
+### Quick start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+# clone the repo
+git clone https://github.com/ngrx/example-app.git
+
+
+# change directory to repo
+cd example-app
+
+# Use npm or yarn to install the dependencies:
+npm install
+
+
+# start the server
+ng serve
+```
+
+Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser
 
 ## Code scaffolding
 
