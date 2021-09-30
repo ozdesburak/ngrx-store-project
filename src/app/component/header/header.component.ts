@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import * as fromAuthSelectors from 'src/app/store/selectors/auth.selectors';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/store';
@@ -12,12 +12,15 @@ import { logout } from 'src/app/store/actions/auth.actions';
 })
 export class HeaderComponent implements OnInit {
   public vm$: Observable<fromAuthSelectors.AuthLinksViewModal>;
-  
+  private userStore$: Subscription;
+  user: import("/Users/burakozdes/Documents/ProjeSon/rxjsExample-1/src/app/models/auth").User;
+
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.getUser();
+    this.getLoginUser();
     
   }
 
@@ -31,6 +34,20 @@ export class HeaderComponent implements OnInit {
     this.store.dispatch(logout());
   }
 
-  
+  getLoginUser(){
+    this.userStore$ = this.store.select(fromAuthSelectors.selectUser)
+      .subscribe((user) => {
+        this.user = user        
+      });
+  }
+
+   myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
 
 }

@@ -1,25 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../models/card';
-
+import { UtilService } from '../services/util.service';
+import * as fromLangSelectors from 'src/app/store/selectors/lang.selectors';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  lang: string;
 
-  constructor() { }
+  constructor(private utilService:UtilService, private store: Store<AppState>) { }
 
-  cardJson= <Card>{
-    "title_headind":"Title Heading",
-    "title_description":" Title description",
-    "date":"Jun 7, 2021",
-    "img":"www.google.com",
-    "p_one":"Some text..",
-    "p_two":"Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
-  }
+  cardJson:Card
 
   ngOnInit(): void {
+    this.getLang();
+    this.cardJson = <Card>this.utilService.getCard(this.lang);
+  }
+  
+
+  getLang(){
+    this.store.select(fromLangSelectors.selectLangState)
+      .subscribe((lang) => {
+        this.lang = lang.lang  
+      });
   }
 
 }

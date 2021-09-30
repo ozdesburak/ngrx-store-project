@@ -4,9 +4,11 @@ import { Store, select } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState } from '../store';
 import * as fromAuthSelectors from 'src/app/store/selectors/auth.selectors';
+import * as fromLangSelectors from 'src/app/store/selectors/lang.selectors';
 import { User } from '../models/auth';
 import * as fromContactActions from 'src/app/store/actions/contact.actions'
 import { CountryList } from '../models/countryList';
+import { UtilService } from '../services/util.service';
 
 @Component({
   selector: 'app-contact',
@@ -17,27 +19,23 @@ export class ContactComponent implements OnInit {
   form: FormGroup;
   private userStore$: Subscription;
   user:User
-   countryList = <CountryList[]> [
-    { id: "TR", name: "Turkey" },
-    { id: "US", name: "United States of America" },
-    { id: "GB", name: "United Kingdom" },
-    { id: "DE", name: "Germany" },
-    { id: "SE", name: "Sweden" },
-    { id: "KE", name: "Kenya" },
-    { id: "BR", name: "Brazil" },
-    { id: "ZW", name: "Zimbabwe" }
-  ]
+   countryList 
   emailPattern = "[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,63}";
 
   formSubmitted: boolean = false;
+  lang: string
 
-  constructor(private store: Store<AppState>, private readonly fb: FormBuilder,) { 
+  constructor(private store: Store<AppState>, private readonly fb: FormBuilder, private utilService:UtilService) { 
     this.getLoginUser()
     this.contactForm()
 
   }
 
   ngOnInit(): void {
+
+    this.countryList = this.utilService.getCountry(this.lang)
+    console.log('loggg', this.countryList);
+    
     
   }
 
@@ -50,6 +48,12 @@ export class ContactComponent implements OnInit {
     this.userStore$ = this.store.select(fromAuthSelectors.selectUser)
       .subscribe((user) => {
         this.user = user        
+      });
+    this.userStore$ = this.store.select(fromLangSelectors.selectLangState)
+      .subscribe((lang) => {
+        this.lang = lang.lang        
+        console.log('asddd', lang);
+        
       });
   }
 
